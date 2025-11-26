@@ -1,7 +1,14 @@
+import java.util.Scanner;
+
 public class Kafe11 {
+    public static int hitungTotalHargaNoAbsen(int pilihanMenu, int banyakItem) {
+        int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000}; //index sesuai dengan menu 1–6
+        int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
+        return hargaTotal;
+    }
+
     public static void Menu (String namaPelanggan, boolean isMember, String  kodePromo ) {
         System.out.println("Selamat datang, " + namaPelanggan + "!");
-
         if (isMember) {
             System.out.println("Anda adalah member, dapatkan diskon 10% untuk setip pembelian! ");
 
@@ -27,11 +34,27 @@ public class Kafe11 {
         System.out.println(); //baris kosong agar  rapi
     }
     //fungsi main program akan dimulai dari sini
-    public static void main(String[] args) {
-        //untuk memanggil fungsi menu yang tadi dibuat
+
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         //akan memanggil panggilan e 1
         Menu("Budi", true, "DISKON30"); //Budi memiliki kode kupon untuk diskon 30%
         
+        System.out.print("Masukkan nomor menu yang ingin Anda pesan : ");
+        int pilihanMenu = sc.nextInt();
+
+        System.out.print("Masukkan jumlah item yang ingin dipesan      : ");
+        int banyakItem = sc.nextInt();
+
+        // Hitung total harga
+        int totalHarga = hitungTotalHargaNoAbsen(pilihanMenu, banyakItem);
+
+        // Tampilkan hasil
+        System.out.println("\nTotal harga untuk pesanan Anda: Rp " + totalHarga);
+        System.out.println("Terima kasih telah berkunjung!");
+        
+        sc.close();
     }
 }
         
