@@ -30,7 +30,7 @@ public class Kafe11 {
     public static void main(String[] args) {
         //untuk memanggil fungsi menu yang tadi dibuat
         //akan memanggil panggilan e 1
-        Menu("Fikri", true, "DISKON50"); //fikri memiliki kode kupon untuk diskon 50%
+        Menu("Budi", true, "DISKON30"); //Budi memiliki kode kupon untuk diskon 30%
         
     }
 }
