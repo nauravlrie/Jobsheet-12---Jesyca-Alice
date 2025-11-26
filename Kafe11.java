@@ -58,17 +58,28 @@ public class Kafe11 {
 
         Menu("Budi", true, "DISKON30");
 
-        System.out.print("Masukkan nomor menu yang ingin Anda pesan : ");
-        int pilihanMenu = sc.nextInt();
+       //menanyakan berapa jenis menu yang mau dipesan
+        System.out.print("Berapa jenis menu yang ingin Anda pesan? ");
+        int jumlahJenis = sc.nextInt();
 
-        System.out.print("Masukkan jumlah item yang ingin dipesan   : ");
-        int banyakItem = sc.nextInt();
+        int totalKeseluruhan = 0;
+        //perulangan
+        for (int i = 1; i <= jumlahJenis; i++) {
+            System.out.println("\n--- PESANAN KE-" + i + " ---");
+            System.out.print("   Masukkan nomor menu  : ");
+            int pilihanMenu = sc.nextInt();
+            
+            System.out.print("   Masukkan jumlah item : ");
+            int banyakItem = sc.nextInt();
 
-        //fungsi yang sudah dimodifikasi
-        int totalBayar = hitungTotalHargaNoAbsen(pilihanMenu, banyakItem, "DISKON30", true);
+            int subtotal = hitungTotalHargaNoAbsen(pilihanMenu, banyakItem, "DISKON30", true);
+            
+            totalKeseluruhan += subtotal;
+            System.out.println("   Subtotal pesanan ke-" + i + "   : Rp " + subtotal);
+        }
 
-        System.out.println("\nTotal harga untuk pesanan Anda: Rp " + totalBayar);
-        System.out.println("Terima kasih telah berkunjung!");
+        System.out.println(" TOTAL KESELURUHAN PESANAN ANDA : Rp " + totalKeseluruhan);
+        System.out.println(" Terima kasih telah berkunjung!");
 
         sc.close();
     }
