@@ -47,11 +47,11 @@ public class Kafe11 {
         System.out.print("Masukkan jumlah item yang ingin dipesan      : ");
         int banyakItem = sc.nextInt();
 
-        // Hitung total harga
-        int totalHarga = hitungTotalHargaNoAbsen(pilihanMenu, banyakItem);
+        int totalBayar = hitungTotalHargaNoAbsen(pilihanMenu, banyakItem);
+        // Hitung total bayar
 
         // Tampilkan hasil
-        System.out.println("\nTotal harga untuk pesanan Anda: Rp " + totalHarga);
+        System.out.println("\nTotal harga untuk pesanan Anda: Rp " + totalBayar);
         System.out.println("Terima kasih telah berkunjung!");
         
         sc.close();
