@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class NilaiMahasiswa11 {        // Ganti 11 dengan nomor absenmu
+public class NilaiMahasiswa11 {  
 
-    // a. Fungsi untuk mengisi array (input dari user)
+   
     public static void isianArray(double[] nilai, int n) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);  //untuk mengisi array
         System.out.println("Masukkan " + n + " nilai mahasiswa:");
         for (int i = 0; i < n; i++) {
             System.out.print("Nilai mahasiswa ke-" + (i+1) + " : ");
@@ -12,16 +12,16 @@ public class NilaiMahasiswa11 {        // Ganti 11 dengan nomor absenmu
         }
     }
 
-    // b. Fungsi untuk menampilkan seluruh nilai
-    public static void tampilArray(double[] nilai) {
+   
+    public static void tampilArray(double[] nilai) { //untuk menampilkan seluruh nilai
         System.out.println("\nDaftar nilai mahasiswa:");
         for (int i = 0; i < nilai.length; i++) {
             System.out.println("Mahasiswa ke-" + (i+1) + " = " + nilai[i]);
         }
     }
 
-    // c. Fungsi untuk menghitung total nilai (return double)
-    public static double hitTot(double[] nilai) {
+    
+    public static double hitTot(double[] nilai) { //untuk menghitung total nilai (return double)
         double total = 0;
         for (int i = 0; i < nilai.length; i++) {
             total = total + nilai[i];
@@ -29,22 +29,21 @@ public class NilaiMahasiswa11 {        // Ganti 11 dengan nomor absenmu
         return total;
     }
 
-    // d. Fungsi main
+    //Fungsi main
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Masukkan jumlah mahasiswa: ");
         int N = sc.nextInt();
 
-        // Membuat array dengan ukuran N
+        //membuat array dengan ukuran N
         double[] nilaiMhs = new double[N];
 
-        // Memanggil fungsi-fungsi
-        isianArray(nilaiMhs, N);      // isi nilai
-        tampilArray(nilaiMhs);        // tampilkan semua nilai
-        double totalNilai = hitTot(nilaiMhs);  // hitung total
+        //memanggil fungsi-fungsi
+        isianArray(nilaiMhs, N);      
+        tampilArray(nilaiMhs);        
+        double totalNilai = hitTot(nilaiMhs); 
         
-        // Tampilkan total nilai
         System.out.println("\nTotal nilai semua mahasiswa = " + totalNilai);
 
         sc.close();
