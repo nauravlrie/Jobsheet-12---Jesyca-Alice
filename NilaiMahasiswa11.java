@@ -29,7 +29,7 @@ public class NilaiMahasiswa11 {
         return total;
     }
 
-    //Fungsi main
+    //fungsi main
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
