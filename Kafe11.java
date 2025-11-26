@@ -1,5 +1,20 @@
 public class Kafe11 {
-    public static void Menu () {
+    public static void Menu (String namaPelanggan, boolean isMember, String  kodePromo ) {
+        System.out.println("Selamat datang, " + namaPelanggan + "!");
+
+        if (isMember) {
+            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setip pembelian! ");
+
+        }
+
+        if (kodePromo.equals("DISKON50")) {
+        System.out.println("SELAMAT! Anda mendapatkan DISKON 50% untuk semua menu!");
+    } else if (kodePromo.equals("DISKON30")) {
+        System.out.println("SELAMAT! Anda mendapatkan DISKON 30% untuk semua menu!");
+    } else if (!kodePromo.isEmpty()) {  // kalau diisi dengan kode yang tidak cocok
+        System.out.println("Maaf, kode promo '" + kodePromo + "' tidak valid atau sudah kadaluarsa.");
+    }
+        System.out.println();
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15.000");
         System.out.println("2. Cappuccino - Rp 20.000");
@@ -14,7 +29,9 @@ public class Kafe11 {
     //fungsi main program akan dimulai dari sini
     public static void main(String[] args) {
         //untuk memanggil fungsi menu yang tadi dibuat
-        Menu();
+        //akan memanggil panggilan e 1
+        Menu("Fikri", true, "DISKON50"); //fikri memiliki kode kupon untuk diskon 50%
+        
     }
 }
         
